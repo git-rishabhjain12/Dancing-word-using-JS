@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Word</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>JAVASCRIPT</h1>
+        <button>Let's Naccho</button>
+        <button>Bas kar bhai</button>
+    </div>
+
+    <script>
+        let word = document.querySelector('h1')
+        let originalWord = word.innerHTML
+        let nacho = document.querySelector('button:first-of-type')
+        let ruko = document.querySelector('button:last-of-type')
+        let interval = ''
+
+        nacho.onclick = () => {
+            let splitedWord = word.innerHTML.split('')
+            interval = setInterval(() => {
+                let lastLetter = splitedWord.pop()
+                splitedWord.unshift(lastLetter)
+                word.innerHTML = splitedWord.join('')
+            }, 1000)
+        }
+
+        ruko.onclick = () => {
+            clearInterval(interval)
+            word.innerHTML = originalWord
+        }
+    </script>
+</body>
+
+</html>
