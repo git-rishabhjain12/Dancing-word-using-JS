@@ -16,24 +16,45 @@
     </div>
 
     <script>
-        let word = document.querySelector('h1')
-        let originalWord = word.innerHTML
+        // let word = document.querySelector('h1')
+        // let originalWord = word.innerHTML
+        // let nacho = document.querySelector('button:first-of-type')
+        // let ruko = document.querySelector('button:last-of-type')
+        // let interval = ''
+
+        // nacho.onclick = () => {
+        //     let splitedWord = word.innerHTML.split('')
+        //     interval = setInterval(() => {
+        //         let lastLetter = splitedWord.pop()
+        //         splitedWord.unshift(lastLetter)
+        //         word.innerHTML = splitedWord.join('')
+        //     }, 1000)
+        // }
+
+        // ruko.onclick = () => {
+        //     clearInterval(interval)
+        //     word.innerHTML = originalWord
+        // }
+
+
+        let word = document.querySelector('h1').innerHTML
+        let originalWord = word
         let nacho = document.querySelector('button:first-of-type')
         let ruko = document.querySelector('button:last-of-type')
         let interval = ''
 
         nacho.onclick = () => {
-            let splitedWord = word.innerHTML.split('')
+            let splitedWord = word.split('')
             interval = setInterval(() => {
                 let lastLetter = splitedWord.pop()
                 splitedWord.unshift(lastLetter)
-                word.innerHTML = splitedWord.join('')
+                document.querySelector('h1').innerHTML = splitedWord.join('')
             }, 1000)
         }
 
         ruko.onclick = () => {
             clearInterval(interval)
-            word.innerHTML = originalWord
+            document.querySelector('h1').innerHTML = originalWord
         }
     </script>
 </body>
